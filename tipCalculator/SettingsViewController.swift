@@ -57,11 +57,13 @@ class SettingsViewController: UIViewController {
         defaults.setInteger(colorControl.selectedSegmentIndex, forKey: "colorChoice")
         defaults.synchronize()
         if(colorControl.selectedSegmentIndex==0){
+            //light
             self.view.backgroundColor = UIColor.whiteColor()
             defaultTipLabel.textColor = UIColor.blackColor()
             colorLabel.textColor = UIColor.blackColor()
         }
         else{
+            //dark
             self.view.backgroundColor = UIColor.blackColor()
             defaultTipLabel.textColor = UIColor.whiteColor()
             colorLabel.textColor = UIColor.whiteColor()

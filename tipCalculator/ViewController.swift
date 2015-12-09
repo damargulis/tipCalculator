@@ -82,7 +82,7 @@ class ViewController: UIViewController {
         tipLabel.text = String(format: "$%.2f", tip)
         totalLabel.text = String(format: "$%.2f", total)
         
-        //colorControl
+        //Create Colors
         if(defaults.integerForKey("colorChoice")==0){
             self.view.backgroundColor = UIColor.whiteColor()
             tipLabel.textColor = UIColor.blackColor()
