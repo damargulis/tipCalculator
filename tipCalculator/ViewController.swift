@@ -20,6 +20,13 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var blackBarView: UIView!
     
+    @IBOutlet weak var tipTextLabel: UILabel!
+    
+    @IBOutlet weak var billTextLabel: UILabel!
+    
+    @IBOutlet weak var totalTextLabel: UILabel!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -74,6 +81,29 @@ class ViewController: UIViewController {
         
         tipLabel.text = String(format: "$%.2f", tip)
         totalLabel.text = String(format: "$%.2f", total)
+        
+        //colorControl
+        if(defaults.integerForKey("colorChoice")==0){
+            self.view.backgroundColor = UIColor.whiteColor()
+            tipLabel.textColor = UIColor.blackColor()
+            totalLabel.textColor = UIColor.blackColor()
+            tipTextLabel.textColor = UIColor.blackColor()
+            billTextLabel.textColor = UIColor.blackColor()
+            blackBarView.backgroundColor = UIColor.blackColor()
+            totalTextLabel.textColor = UIColor.blackColor()
+            
+        }
+        else{
+            self.view.backgroundColor = UIColor.blackColor()
+            tipLabel.textColor = UIColor.whiteColor()
+            totalLabel.textColor = UIColor.whiteColor()
+            tipTextLabel.textColor = UIColor.whiteColor()
+            billTextLabel.textColor = UIColor.whiteColor()
+            blackBarView.backgroundColor = UIColor.whiteColor()
+            totalTextLabel.textColor = UIColor.whiteColor()
+        }
+        
+        
 
         
     }

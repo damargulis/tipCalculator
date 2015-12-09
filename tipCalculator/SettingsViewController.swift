@@ -12,6 +12,12 @@ class SettingsViewController: UIViewController {
 
     @IBOutlet weak var defaultTipControl: UISegmentedControl!
     
+    @IBOutlet weak var colorControl: UISegmentedControl!
+    
+    @IBOutlet weak var defaultTipLabel: UILabel!
+    
+    @IBOutlet weak var colorLabel: UILabel!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -19,6 +25,7 @@ class SettingsViewController: UIViewController {
         // Do any additional setup after loading the view.
         let defaults = NSUserDefaults.standardUserDefaults()
         defaultTipControl.selectedSegmentIndex = defaults.integerForKey("defaultTip")
+        colorControl.selectedSegmentIndex = defaults.integerForKey("colorChoice")
         
     }
 
@@ -45,4 +52,19 @@ class SettingsViewController: UIViewController {
         
     }
 
+    @IBAction func changeColor(sender: AnyObject) {
+        let defaults = NSUserDefaults.standardUserDefaults()
+        defaults.setInteger(colorControl.selectedSegmentIndex, forKey: "colorChoice")
+        defaults.synchronize()
+        if(colorControl.selectedSegmentIndex==0){
+            self.view.backgroundColor = UIColor.whiteColor()
+            defaultTipLabel.textColor = UIColor.blackColor()
+            colorLabel.textColor = UIColor.blackColor()
+        }
+        else{
+            self.view.backgroundColor = UIColor.blackColor()
+            defaultTipLabel.textColor = UIColor.whiteColor()
+            colorLabel.textColor = UIColor.whiteColor()
+        }
+    }
 }

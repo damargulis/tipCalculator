@@ -90,10 +90,13 @@
                     </navigationItem>
                     <connections>
                         <outlet property="billField" destination="fm7-oH-bbD" id="Icd-fT-aHq"/>
+                        <outlet property="billTextLabel" destination="B2x-ua-gIL" id="3jD-pU-9K3"/>
                         <outlet property="blackBarView" destination="rBg-fJ-kpk" id="LUa-N6-u3A"/>
                         <outlet property="tipControl" destination="kpY-07-C0s" id="wxu-PK-KW6"/>
                         <outlet property="tipLabel" destination="e0X-jh-BXC" id="IYk-Cj-VwN"/>
+                        <outlet property="tipTextLabel" destination="JER-4Q-1Oc" id="yVA-OP-oCp"/>
                         <outlet property="totalLabel" destination="VVx-NZ-hQT" id="n9Q-in-7do"/>
+                        <outlet property="totalTextLabel" destination="CJd-pN-C1P" id="mb8-O7-lyV"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -132,12 +135,33 @@
                                     <action selector="changeDefaultTip:" destination="7EU-9e-ejz" eventType="valueChanged" id="2uL-KK-Z85"/>
                                 </connections>
                             </segmentedControl>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Color Scheme:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Kdb-D3-uxR">
+                                <rect key="frame" x="20" y="173" width="113" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" id="TY2-BT-g0k">
+                                <rect key="frame" x="20" y="202" width="280" height="29"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <segments>
+                                    <segment title="Light"/>
+                                    <segment title="Dark"/>
+                                </segments>
+                                <connections>
+                                    <action selector="changeColor:" destination="7EU-9e-ejz" eventType="valueChanged" id="Unx-RQ-1vN"/>
+                                </connections>
+                            </segmentedControl>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" title="Settings" id="nJu-YT-6RD"/>
                     <connections>
+                        <outlet property="colorControl" destination="TY2-BT-g0k" id="IJz-dt-Wck"/>
+                        <outlet property="colorLabel" destination="Kdb-D3-uxR" id="GYN-Ch-3Wq"/>
                         <outlet property="defaultTipControl" destination="afk-59-F63" id="8kr-hs-zz6"/>
+                        <outlet property="defaultTipLabel" destination="luQ-1q-TiJ" id="W0L-v4-6yF"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kKm-aN-ws6" userLabel="First Responder" sceneMemberID="firstResponder"/>
